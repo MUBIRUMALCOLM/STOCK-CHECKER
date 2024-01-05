@@ -1,15 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>STOCK LEVEL CHECKER</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Level Checker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Stock Level Checker</h1>
+  <h1>Stock Level Checker</h1>
+  <p><img src="trainers.jpg" alt="Pair of trainers in size 7"></p>
+  <p>Selling trainers. The item is a pair of trainers in size 7. The shop starts with 50 pairs of trainers.</p>
 
-    <p>Selling trainers. The item sold is a pair of trainers in size 7. The shop starts with 50 pairs of trainers.</p>
-
-    <input type="number" id="sold">
+  <label for="sold">Number of trainers sold:</label>
+  <input type="number" id="sold" placeholder="Enter number of trainers sold">
+  <button onclick="checkStock()">Check Stock</button>
+  
+  <p id="result"></p>
+  
+  <p>Note: If the stock is below 15, an alert will display: "Less than 15 pairs remaining, order more stock". If the stock falls below 5, the alert will display: "Less than 5 pairs remaining, order more stock". If the stock is all sold, a message will display: "No stock remaining". If the stock is 15 or above, it will display the current stock quantity plus "Sufficient stock".</p>
 </body>
+<script>
+    function checkStock() {
+      var stock = 50; // Initial stock level
+      var sold = document.getElementById("sold").value; // Number of trainers sold
+
+      stock -= sold; // Update stock level
+      
+      if (stock <= 0) {
+        document.getElementById("result").innerHTML = "No stock remaining";
+      } else if (stock < 5) {
+        document.getElementById("result").innerHTML = "Less than 5 pairs remaining, order more stock";
+      } else if (stock < 15) {
+        document.getElementById("result").innerHTML = "Less than 15 pairs remaining, order more stock";
+      } else {
+        document.getElementById("result").innerHTML = "Stock: " + stock + " pairs, Sufficient stock";
+      }
+    }
+  </script>
 </html>
