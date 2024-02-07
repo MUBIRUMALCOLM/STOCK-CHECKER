@@ -19,3 +19,6 @@ This application allows users to input the number of trainers sold and check the
 - If the stock is below 5: "Less than 5 pairs remaining, order more stock."
 - If the stock is all sold: "No stock remaining."
 - If the stock is 15 or above: Display the current stock quantity followed by "Sufficient stock."
+
+## Link
+https://mubirumalcolm.github.io/STOCK-CHECKER/
